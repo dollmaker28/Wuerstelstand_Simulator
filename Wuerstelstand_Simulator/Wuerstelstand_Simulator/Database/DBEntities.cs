@@ -5,12 +5,13 @@ using SQLite;
 
 namespace Wuerstelstand_Simulator.Database
 {
-    class DBTables
+    class DBEnities
     {
     }
 
+    [Table("StoredItems")]
     // Klasse für Artikel
-    public class StoredItem
+    public class StoredItems
     {
         [PrimaryKey, AutoIncrement]
         public int Id { get; set; }
@@ -19,6 +20,7 @@ namespace Wuerstelstand_Simulator.Database
         public int ItemTypeId { get; set;}
     }
 
+    [Table("ItemType")]
     // Klasse für Artikeltypen
     public class ItemType
     {
@@ -26,7 +28,7 @@ namespace Wuerstelstand_Simulator.Database
         public string ItemTypeName { get; set; }
     }
 
-
+    [Table("ItemSalesQuota")]
     // Klasse für Verkaufsquoten je nach Artikel und Temperaturbereich
     public class ItemSalesQuota
     {
@@ -37,6 +39,7 @@ namespace Wuerstelstand_Simulator.Database
         public int SalesQuotaTo { get; set; }
     }
 
+    [Table("Finance")]
     // Klasse für Finanzen
     public class Finance
     {
@@ -45,6 +48,7 @@ namespace Wuerstelstand_Simulator.Database
         public string AssetLabel { get; set; }
     }
 
+    [Table("Weather")]
     // Klasse für Wetter
     public class Weather
     {
@@ -54,14 +58,16 @@ namespace Wuerstelstand_Simulator.Database
     }
 
     // Klasse für die Jahreszeiten
-    public class Season
+    [Table("Seasons")]
+    public class Seasons
     {
         public int Id { get; set; }
-        public string SeasonText { get; set; }
+        public string SeasonsText { get; set; }
         public int TempFrom { get; set; }
         public int TempTo { get; set; }
     }
 
+    [Table("SeasonTempRange")]
     // Klasse für die Temperaturbereiche je Jahreszeit
     public class SeasonTempRange
     {

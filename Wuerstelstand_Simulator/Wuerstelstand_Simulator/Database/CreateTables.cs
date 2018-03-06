@@ -11,13 +11,13 @@ namespace Wuerstelstand_Simulator.Database
 
         public void CreateDB()
         {
-            var conn = new SQLiteAsyncConnection(System.IO.Path.Combine(folder, "Wurst.db"));
-            conn.CreateTableAsync<StoredItem>();
+        var conn = new SQLiteAsyncConnection(System.IO.Path.Combine(folder, "Wurst.db"));
+            conn.CreateTableAsync<StoredItems>();
             conn.CreateTableAsync<ItemType>();
             conn.CreateTableAsync<ItemSalesQuota>();
             conn.CreateTableAsync<Finance>();
             conn.CreateTableAsync<Weather>();
-            conn.CreateTableAsync<Season>();
+            conn.CreateTableAsync<Seasons>();
             conn.CreateTableAsync<SeasonTempRange>();
         }
     }
