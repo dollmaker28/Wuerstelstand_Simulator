@@ -10,7 +10,7 @@ namespace Wuerstelstand_Simulator.Database
     }
 
     // Klasse für Artikel
-    public class StoredItems
+    public class StoredItem
     {
         [PrimaryKey, AutoIncrement]
         public int Id { get; set; }
