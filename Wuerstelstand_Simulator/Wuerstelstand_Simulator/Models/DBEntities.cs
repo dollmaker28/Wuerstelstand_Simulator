@@ -5,7 +5,7 @@ using SQLite;
 
 namespace Wuerstelstand_Simulator.Database
 {
-    class DBEnities
+    public class DBEnities
     {
     }
 

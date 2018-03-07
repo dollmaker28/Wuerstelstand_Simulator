@@ -16,10 +16,14 @@
     <Compile Include="$(MSBuildThisFileDirectory)App.xaml.cs">
       <DependentUpon>App.xaml</DependentUpon>
     </Compile>
-    <Compile Include="$(MSBuildThisFileDirectory)Database\DBFactory.cs" />
-    <Compile Include="$(MSBuildThisFileDirectory)Database\DBEntities.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Database\UserDatabaseController.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Models\DBEntities.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Database\ISQLite.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)MainPage.xaml.cs">
       <DependentUpon>MainPage.xaml</DependentUpon>
     </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="$(MSBuildThisFileDirectory)Models\" />
   </ItemGroup>
 </Project>

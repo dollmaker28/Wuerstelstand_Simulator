@@ -2,6 +2,8 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using SQLite;
+using Wuerstelstand_Simulator.Database;
 
 using Xamarin.Forms;
 
@@ -14,6 +16,9 @@ namespace Wuerstelstand_Simulator
 			InitializeComponent();
 
 			MainPage = new Wuerstelstand_Simulator.MainPage();
+
+            // Instanzieren der UserDatabaseController-Klasse (Tabellen werden im Konstruktor gleich mit erstellt.
+            //UserDatabaseController db = new UserDatabaseController();
 		}
 
 		protected override void OnStart ()
