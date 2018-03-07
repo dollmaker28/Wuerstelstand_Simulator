@@ -5,13 +5,24 @@ using SQLite;
 
 namespace Wuerstelstand_Simulator.Database
 {
-    static class DBFactory
+    public class DBFactory
     {
-        public static void CreateSeasons(Seasons season)
+        // Variable für die Datenbankverbindung
+        private SQLiteAsyncConnection database;
+
+        // Methode zur Erstellung der Datenbank und der Entitäten
+        public void CreateDB()
         {
-            string folder = Environment.GetFolderPath(Environment.SpecialFolder.Personal);
-            var conn = new SQLiteAsyncConnection(System.IO.Path.Combine(folder, "Wurst.db"));
-            SQLiteCommand insertSQL = new SQLiteCommand();
+            string dbPath = Environment.GetFolderPath(Environment.SpecialFolder.Personal);
+            database = new SQLiteAsyncConnection(System.IO.Path.Combine(dbPath, "Sausage.db3"));
+
+            database.CreateTableAsync<StoredItems>();
+            database.CreateTableAsync<ItemType>();
+            database.CreateTableAsync<ItemSalesQuota>();
+            database.CreateTableAsync<Finance>();
+            database.CreateTableAsync<Weather>();
+            database.CreateTableAsync<Seasons>();
+            database.CreateTableAsync<SeasonTempRange>();
         }
     }
 }
